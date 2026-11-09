@@ -1,11 +1,19 @@
 # Kuwait Zoo Responsive Firebase Site
 
-The main public page is `zooinfo.html`; `index.html` redirects to the report. Admin sign-in uses Firebase Email/Password Authentication.
+This repository contains the public population report and admin login for the Kuwait Zoo app.
 
-## Firebase
-- `firebase-config.js` contains public web-app configuration only.
-- Firestore rules should allow public reads and restrict app writes to the authenticated admin UID.
-- Add your deployed Vercel domain to Firebase Authentication's authorized domains.
+## Files
+- `zooinfo.html` — public report page
+- `admin-login.html` — admin sign-in page
+- `firebase-config.js` — Firebase public web config
+- `admin-species.js` — Firestore species add/delete support
 
 ## Deploy on Vercel
-Import this GitHub repository into Vercel. For a static HTML site, choose **Other**, leave build command and output directory blank, and deploy. This repository's index redirects to the existing GitHub Pages report until `zooinfo.html` and `admin-login.html` are copied in.
+1. Import this repo into Vercel.
+2. Use the default static project settings.
+3. Set the root directory to the repository root.
+4. Add the deployed domain to Firebase Authentication authorized domains.
+
+## Important
+- Firestore rules should allow public reads and restrict writes to the admin UID.
+- Do not commit private Firebase service-account credentials.
