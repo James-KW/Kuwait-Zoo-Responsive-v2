@@ -1,19 +1,8 @@
-# Kuwait Zoo Responsive Firebase Site
+# Kuwait Zoo Vercel redirect
 
-This repository contains the public population report and admin login for the Kuwait Zoo app.
+This deployment forwards to the original, working Kuwait Zoo site so the existing full report and Firebase behavior are preserved.
 
-## Files
-- `zooinfo.html` — public report page
-- `admin-login.html` — admin sign-in page
-- `firebase-config.js` — Firebase public web config
-- `admin-species.js` — Firestore species add/delete support
+- Report: https://james-kw.github.io/Kuwait-Zoo-Responsive/zooinfo.html
+- Admin login: https://james-kw.github.io/Kuwait-Zoo-Responsive/admin-login.html
 
-## Deploy on Vercel
-1. Import this repo into Vercel.
-2. Use the default static project settings.
-3. Set the root directory to the repository root.
-4. Add the deployed domain to Firebase Authentication authorized domains.
-
-## Important
-- Firestore rules should allow public reads and restrict writes to the admin UID.
-- Do not commit private Firebase service-account credentials.
+The new repository's Vercel deployment redirects these paths to the original GitHub Pages app. For future code changes, work in the original `James-KW/Kuwait-Zoo-Responsive` repository or switch Vercel's Git integration to that repository.

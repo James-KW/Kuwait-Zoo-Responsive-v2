@@ -1,86 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kuwait Zoo Admin Login</title>
-    <style>
-      :root { --green: #1a6d38; --dark: #1c2a2d; --bg: #eef4ef; }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0; min-height: 100vh; display: grid; place-items: center;
-        background: linear-gradient(135deg, #0d1a17, #1f4735);
-        font-family: Arial, sans-serif;
-      }
-      .card {
-        width: min(420px, calc(100vw - 32px));
-        background: white; border-radius: 18px; box-shadow: 0 20px 50px rgba(0,0,0,.22);
-        padding: 28px; }
-      h1 { margin: 0 0 8px; text-align: center; color: var(--green); }
-      .info { text-align: center; color: #5c6662; margin-bottom: 22px; }
-      label { display: block; margin-bottom: 6px; font-weight: 600; color: #21302c; }
-      input {
-        width: 100%; padding: 12px 14px; margin-bottom: 16px; border-radius: 10px;
-        border: 1px solid #cfe0d3; font-size: 1rem;
-      }
-      button {
-        width: 100%; background: var(--green); color: white; border: none; border-radius: 10px;
-        padding: 12px 16px; font-size: 1rem; cursor: pointer;
-      }
-      button:disabled { opacity: 0.7; cursor: wait; }
-      .message { min-height: 20px; margin-top: 12px; font-size: 14px; color: #b42318; }
-      a { display: inline-block; margin-top: 12px; text-align: center; width: 100%; color: var(--green); }
-    </style>
-  </head>
-  <body>
-    <div class="card">
-      <h1>Admin Login</h1>
-      <div class="info">Kuwait Zoo management</div>
-      <form id="loginForm">
-        <label for="email">Email</label>
-        <input id="email" type="email" autocomplete="email" required />
-
-        <label for="password">Password</label>
-        <input id="password" type="password" autocomplete="current-password" required />
-
-        <button id="submitBtn" type="submit">Sign In</button>
-        <div id="message" class="message" aria-live="polite"></div>
-      </form>
-      <a href="zooinfo.html">Return to public report</a>
-    </div>
-
-    <script type="module">
-      import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
-      import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
-      import { firebaseConfig } from './firebase-config.js';
-
-      const app = initializeApp(firebaseConfig);
-      const auth = getAuth(app);
-      const form = document.getElementById('loginForm');
-      const submitBtn = document.getElementById('submitBtn');
-      const message = document.getElementById('message');
-
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          window.location.href = 'zooinfo.html';
-        }
-      });
-
-      form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const email = document.getElementById('email').value.trim();
-        const password = document.getElementById('password').value;
-        submitBtn.disabled = true;
-        message.textContent = 'Signing in…';
-        try {
-          await signInWithEmailAndPassword(auth, email, password);
-          window.location.href = 'zooinfo.html';
-        } catch (error) {
-          message.textContent = 'Login failed. Check email, password, and Firebase authorized domain.';
-        } finally {
-          submitBtn.disabled = false;
-        }
-      });
-    </script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0;url=https://james-kw.github.io/Kuwait-Zoo-Responsive/admin-login.html">
+  <title>Kuwait Zoo Admin Login</title>
+</head>
+<body>
+  <p>Opening the original admin login… <a href="https://james-kw.github.io/Kuwait-Zoo-Responsive/admin-login.html">Continue</a></p>
+  <script>window.location.replace('https://james-kw.github.io/Kuwait-Zoo-Responsive/admin-login.html');</script>
+</body>
 </html>
